@@ -173,6 +173,3 @@ Static Analysis: Python AST
 The AI-Driven Code Reviewer demonstrates how artificial intelligence can be integrated into a structured, enterprise-style architecture to automate and enhance the code review process while improving development efficiency.
 
 ---
-
-### 👩‍💻 Developed By
-**Mahalakshmi M**
