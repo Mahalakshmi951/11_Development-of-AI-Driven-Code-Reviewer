@@ -1,51 +1,127 @@
-# Development of an AI-Driven Code Reviewer
+# 🤖 AI-Driven Code Reviewer
 
-## Abstract
+An intelligent automated system that analyzes Python programs and generates structured, educational feedback using AST-based static analysis and AI-powered semantic evaluation.
 
-Manual evaluation of programming assignments is a repetitive and time-consuming task in academic environments. Instructors must assess not only code correctness but also coding style, logical structure, and efficiency. This paper presents a compact research model for an AI-driven code reviewer designed to automate code analysis and feedback generation. The proposed system integrates Abstract Syntax Tree (AST) parsing with AI-based language models to detect syntax and logical errors, analyze coding style compliance, and suggest optimizations. The solution aims to enhance learning outcomes by providing instant, structured, and student-friendly feedback while reducing the evaluation workload for instructors.
+---
 
-## Keywords
+## 📌 Abstract
 
-AI-based code review, AST parsing, automated feedback, GPT API, programming education
+Manual evaluation of programming assignments is time-consuming and inconsistent in academic environments. This project proposes an AI-driven code reviewer that automates code analysis and feedback generation.
 
-## 1. Introduction
+The system combines:
+- **Abstract Syntax Tree (AST) parsing** for structural analysis
+- **Static analysis techniques** for error detection
+- **AI-based semantic evaluation** for meaningful explanations and optimization suggestions
 
-Code review is an essential component of software development and programming education. In academic settings, students submit a large number of coding assignments that must be evaluated for correctness, readability, and adherence to coding standards. Manual review is often inconsistent and time-intensive, particularly in large classrooms.
+The goal is to enhance student learning while reducing instructor workload.
 
-With advances in artificial intelligence and natural language processing, automated systems can now assist in code understanding and analysis. AI-driven tools offer the ability to identify errors, recommend best practices, and provide explanations in a human-like manner. This research proposes an AI-driven code reviewer that combines deterministic program analysis using AST with AI-based semantic evaluation to deliver comprehensive feedback to students.
+---
 
-## 2. Problem Statement
+## 🎯 Problem Statement
 
-Manual code review for large volumes of student submissions is inefficient and prone to inconsistency. Existing static analysis tools focus mainly on rule-based checks and lack personalized feedback. There is a need for an intelligent system that can automatically analyze student code, identify errors, evaluate coding style, and suggest meaningful improvements in an educational context.
+Manual code review:
+- Takes significant time
+- Lacks consistency
+- Is difficult to scale in large classrooms
 
-## 3. Proposed System
+Existing static tools only provide rule-based checks and do not offer educational explanations.
 
-The proposed system is an automated code review platform primarily designed for Python programs. It accepts student code as input and processes it through multiple analysis layers to generate structured feedback.
+This project addresses the need for an intelligent system that:
+- Detects syntax and logical errors
+- Evaluates coding style (PEP8)
+- Suggests optimizations
+- Generates structured feedback
 
-### 3.1 System Architecture
+---
+
+## 🏗️ System Architecture
 
 The system consists of the following modules:
 
-* **Code Parsing and Preprocessing:** Parses input code using Python’s AST module to understand program structure and normalize formatting.
-* **Error and Bug Detection:** Identifies syntax errors, undefined variables, unused imports, and unreachable code through static analysis.
-* **Coding Style Analysis:** Evaluates adherence to PEP8 guidelines, checking naming conventions, indentation, and line length.
-* **Optimization Suggestions:** Uses the GPT API to analyze code efficiency and readability, recommending best practices and alternative approaches.
-* **Feedback Delivery Interface:** Presents categorized feedback through a web-based user interface.
+### 1️⃣ Code Parsing & Preprocessing
+- Uses Python’s `AST` module
+- Understands program structure (functions, loops, conditions)
 
-## 4. Methodology
+### 2️⃣ Error Detection
+- Syntax errors
+- Undefined variables
+- Unused imports
+- Logical inconsistencies
 
-The implementation uses Python for backend processing due to its strong support for AST manipulation and AI integration. Static analysis techniques are applied for error and style detection, while AI models generate semantic feedback and optimization suggestions. The system produces clear explanations along with code improvement recommendations, making it suitable for learning environments.
+### 3️⃣ Coding Style Analysis
+- PEP8 compliance
+- Indentation checking
+- Naming conventions
+- Line length validation
 
-## 5. Results and Discussion
+### 4️⃣ AI-Based Semantic Review
+- Code readability improvements
+- Optimization suggestions
+- Best practice recommendations
+- Human-like explanations
 
-Initial testing shows that the AI-driven reviewer successfully detects common syntax and logical errors in student code. Style violations are accurately identified, and AI-generated suggestions improve code readability and structure. The automated feedback reduces manual review effort and helps students understand their mistakes more effectively.
+### 5️⃣ Feedback Interface
+- Categorized structured output
+- Web-based display for students
 
-## 6. Conclusion and Future Work
+---
 
-This research model demonstrates the potential of AI-driven code review systems in academic environments. By combining AST-based static analysis with AI-powered feedback, the system delivers comprehensive and educational code evaluations. Future enhancements include multi-language support, integration with learning management systems, and advanced analytics for personalized learning.
+## ⚙️ Methodology
 
-## References
+The system is implemented using Python due to its strong AST support and AI integration capabilities.
 
-1. Python Software Foundation, “PEP 8 – Style Guide for Python Code.”
-2. A. V. Aho et al., *Compilers: Principles, Techniques, and Tools*.
+### 🔹 Static Analysis Layer
+Performs rule-based validation using AST traversal.
 
+### 🔹 AI Semantic Layer
+Uses GPT-based API models to analyze deeper logical structure and provide educational explanations.
+
+Combining these two layers ensures both technical accuracy and conceptual clarity.
+
+---
+
+## 📊 Results
+
+Initial prototype testing shows:
+
+- Accurate detection of syntax and logical errors  
+- Effective identification of style violations  
+- Meaningful AI-generated optimization suggestions  
+- Reduced manual review effort  
+
+The system delivers more comprehensive feedback compared to traditional static analysis tools.
+
+---
+
+## 🚀 Future Enhancements
+
+- Multi-language support (Java, C++)
+- Plagiarism detection
+- Performance benchmarking
+- LMS integration
+- Personalized learning analytics
+
+---
+
+## 🛠️ Tech Stack
+
+- Python (AST Module)
+- Node.js / Flask (Backend)
+- React.js (Frontend)
+- MongoDB / SQL (Database)
+- GPT API (AI Integration)
+
+---
+
+## 📚 References
+
+1. Python Software Foundation – PEP 8 Style Guide  
+2. A. V. Aho et al., *Compilers: Principles, Techniques, and Tools*  
+3. T. Parr, *The Definitive ANTLR 4 Reference*  
+
+---
+
+## 👩‍💻 Author
+
+**Mahalakshmi M**  
+AI & Full Stack Developer
