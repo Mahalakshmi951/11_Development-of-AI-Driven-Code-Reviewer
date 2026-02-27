@@ -32,7 +32,6 @@ flowchart TD
     H --> B
 ```
 
-<img width="1840" height="704" alt="image" src="https://github.com/user-attachments/assets/fff55fd8-8449-47ce-9104-4b2e95a68cff" />
 
 ### 🔍 Architecture Description
 
