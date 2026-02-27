@@ -119,9 +119,5 @@ The system delivers more comprehensive feedback compared to traditional static a
 2. A. V. Aho et al., *Compilers: Principles, Techniques, and Tools*  
 3. T. Parr, *The Definitive ANTLR 4 Reference*  
 
----
 
-## 👩‍💻 Author
 
-**Mahalakshmi M**  
-AI & Full Stack Developer
