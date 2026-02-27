@@ -3,9 +3,8 @@
 ```mermaid
 flowchart LR
 
-    A[Student / User] --> B[Frontend Application<br>(React.js)]
-
-    B --> C[Backend API Server<br>(Flask / Node.js)]
+    A[Student / User] --> B[Frontend Application - React]
+    B --> C[Backend API Server - Flask or Node]
 
     C --> D[Static Analysis Engine]
     C --> E[AI Semantic Engine]
@@ -13,7 +12,7 @@ flowchart LR
 
     D --> D1[AST Parser]
     D --> D2[PEP8 Style Checker]
-    D --> D3[Error Detection Module]
+    D --> D3[Error Detection]
 
     E --> E1[GPT API Integration]
     E --> E2[Optimization Suggestions]
@@ -23,63 +22,34 @@ flowchart LR
     E --> G
 
     G --> F
-    F --> H[Structured Feedback Response]
+    F --> H[Structured Feedback Output]
 
     H --> B
 
+---
+
+# 🔥 Why This Works
+
+✅ No HTML tags  
+✅ Simple node labels  
+✅ GitHub supported syntax  
+✅ Professional clean layout  
 
 ---
 
-# 🔥 What This Shows (Professional Explanation)
-
-### 🔹 Frontend Layer
-- React-based UI
-- Accepts student code input
-- Displays categorized feedback
-
-### 🔹 Backend Layer
-- Handles API requests
-- Coordinates analysis engines
-- Manages database interaction
-
-### 🔹 Static Analysis Engine
-- AST-based structural parsing
-- PEP8 validation
-- Logical and syntax error detection
-
-### 🔹 AI Semantic Engine
-- GPT-based reasoning
-- Optimization detection
-- Human-readable explanation generation
-
-### 🔹 Database
-- Stores code submissions
-- Saves feedback history
-- Enables review tracking
-
----
-
-# 🎯 Why This Looks Professional
-
-✅ Clear separation of layers  
-✅ Modular architecture  
-✅ Industry-style backend flow  
-✅ Scalable design  
-✅ Recruiter-friendly  
-
----
-
-If you want next level:
+# 🎯 If You Want Even Cleaner Enterprise Version
 
 I can give you:
-- 🔐 Microservices architecture version  
-- ☁️ Cloud deployment architecture (AWS style)  
-- 📊 High-level enterprise diagram  
-- 📄 Architecture description paragraph for research paper  
 
-Tell me where you are using this:
-- GitHub only?
-- College project submission?
-- Placement portfolio?  
+- Vertical architecture  
+- Microservice architecture  
+- Deployment architecture (with Cloud)  
+- High-level executive diagram  
 
-I’ll tailor it exactly. 🚀
+Tell me which level you want:
+
+1. 📘 College project  
+2. 💼 Placement portfolio  
+3. 🚀 Startup level product  
+
+I’ll tailor it properly.
