@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h2>Code Analysis Report</h2>
+
+    <h3>🔍 Syntax Check</h3>
+    {% if syntax_error %}
+        <p style="color:red;">{{ syntax_error }}</p>
+    {% else %}
+        <p style="color:green;">No Syntax Errors</p>
+    {% endif %}
+
+    <h3>📊 Cyclomatic Complexity Score</h3>
+    <p>{{ complexity_score }}</p>
+
+    <h3>🤖 AI Detailed Review</h3>
+    <pre>{{ review }}</pre>
+
+    <br>
+    <a href="/dashboard">Back</a>
+</body>
+</html>

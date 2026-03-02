@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Code Reviewer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            min-height: 100vh;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .card-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        textarea {
+            border-radius: 10px;
+        }
+
+        .btn-review {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            border: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .review-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+
+        /* Complexity Circle */
+        .circle-container {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .circle-progress {
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease, stroke 1s ease;
+            transform: rotate(-90deg);   /* rotate only progress arc */
+            transform-origin: 50% 50%;
+        }
+
+        .score-text {
+            font-size: 24px;
+            font-weight: bold;
+            fill: #333;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="card-box">
+
+        <h2 class="text-center mb-4">🚀 AI Code Reviewer</h2>
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label>Select Programming Language</label>
+                <select name="language" class="form-select" required>
+                    <option value="Python" selected>Python</option>
+                    <option value="c" selected>c</option>
+                    <option value="Java" selected>Java</option>
+                    <option value="c++" selected>c++</option>
+                    <option value="Javascript" selected>Javascript</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Paste Your Code</label>
+                <textarea name="code" rows="10" class="form-control" required>{{ request.form.code }}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-review w-100">
+                Analyze Code
+            </button>
+        </form>
+
+        {% if syntax_error %}
+        <div class="review-box">
+            <h5>⚠️ Syntax Error:</h5>
+            <hr>
+            {{ syntax_error }}
+        </div>
+        {% endif %}
+
+        {% if complexity_score is not none %}
+        <div class="circle-container">
+            <svg width="120" height="120">
+                <!-- Background circle -->
+                <circle cx="60" cy="60" r="50"
+                        stroke="#ddd"
+                        stroke-width="10"
+                        fill="none"/>
+
+                <!-- Progress arc -->
+                <circle id="progress-arc"
+                        cx="60"
+                        cy="60"
+                        r="50"
+                        stroke-width="10"
+                        fill="none"
+                        class="circle-progress"/>
+
+                <!-- Score text -->
+                <text x="60" y="60" class="score-text">
+                    {{ complexity_score }}
+                </text>
+            </svg>
+        </div>
+        {% endif %}
+
+        {% if review %}
+        <div class="review-box">
+            <h5>🔎 AI Review Result:</h5>
+            <hr>
+            <strong>Complexity Score:</strong> {{ complexity_score }}<br><br>
+            <pre>{{ review | safe }}</pre>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const score = parseInt("{{ complexity_score|default(0) }}");
+    const circle = document.getElementById('progress-arc');
+    if (!circle) return;
+
+    const radius = 50;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.setAttribute('stroke-dasharray', circumference);
+
+    const offset = circumference - (score / 100) * circumference;
+    circle.setAttribute('stroke-dashoffset', offset);
+
+    let color = '#f44336';
+    if (score >= 80) color = '#4caf50';
+    else if (score >= 50) color = '#ff9800';
+
+    circle.setAttribute('stroke', color);
+});
+</script>
+
+</body>
+</html>
